@@ -5,9 +5,9 @@ import { FaCheck, FaPen, FaTrashAlt } from "react-icons/fa";
 const Task = (props) => {
   const handleDelete = () => {
     axios
-      .delete(`http://127.0.0.1:5000/content?id=${props.task_id}`)
+      .delete(`https://test-api-demo.onrender.com/content?id=${props.task_id}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
         console.log(error);

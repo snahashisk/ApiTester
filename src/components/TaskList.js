@@ -3,17 +3,17 @@ import Task from "./Task";
 
 const TaskList = () => {
   const [taskData, setTaskData] = useState([]);
-  const [taskState, setTaskState] = useState(0);
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:5000/content")
+  const fetchTaskData = () => {
+    fetch("https://test-api-demo.onrender.com/content")
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
       })
       .then((data) => setTaskData(data));
-  }, [taskState]);
+  };
+  useEffect(fetchTaskData, []);
 
   const taskDataLength = Object.keys(taskData).length;
   if (!taskDataLength) {

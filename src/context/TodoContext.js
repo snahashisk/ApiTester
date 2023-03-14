@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const TodoContext = createContext(0);
+export const TodoContext = createContext(null);

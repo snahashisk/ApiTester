@@ -8,12 +8,16 @@ function InputForm({ onClose, visible }) {
 
   const createTodo = async (content) => {
     try {
-      const response = await axios.post("http://127.0.0.1:5000/content", {
-        content,
-      });
-      return response.data;
+      const response = await axios.post(
+        "hhttps://test-api-demo.onrender.com/content",
+        {
+          content,
+        }
+      );
+      console.log(response);
+      return response;
     } catch (error) {
-      throw new Error(error.response.data.message);
+      // throw new Error(error.response);
     }
   };
 
